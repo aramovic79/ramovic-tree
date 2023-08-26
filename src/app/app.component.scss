@@ -1,12 +1,10 @@
-.tree-container {
-    overflow: auto;
-}
 
 .tree ul {
     padding-top: 20px;
     position: relative;
     transition: all 0.5s;
     display: flex;
+    cursor: move;
 }
 
 .tree li {

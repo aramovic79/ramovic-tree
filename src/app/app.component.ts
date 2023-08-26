@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +12,13 @@ export class AppComponent {
 
   possibleRelationships = ['Child', 'Spouse', 'Sibling'];
 
+  zoomLevel = 1.0; // Initial zoom level
+  cursorX = 0;
+  cursorY = 0;
+  isDragging = false;
+  previousX = 0;
+  previousY = 0;
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -23,5 +30,53 @@ export class AppComponent {
     }
   }
 
-  
+  @HostListener('mousewheel', ['$event'])
+  onScroll(event: any) {
+    const delta = Math.sign(event.deltaY);
+    if (delta > 0) {
+      this.zoomOut();
+    } else {
+      this.zoomIn();
+    }
+    event.preventDefault();
+  }
+
+  @HostListener('mousedown', ['$event'])
+  onMouseDown(event: any) {
+    if (event.button === 0) { // Check if left mouse button is clicked
+      this.isDragging = true;
+      this.previousX = event.clientX;
+      this.previousY = event.clientY;
+    }
+  }
+
+  @HostListener('mouseup')
+  onMouseUp() {
+    this.isDragging = false;
+  }
+
+  @HostListener('mousemove', ['$event'])
+  onMouseMove(event: any) {
+    if (this.isDragging) {
+      const deltaX = event.clientX - this.previousX;
+      const deltaY = event.clientY - this.previousY;
+
+      // Adjust the scaling factor to make the movement smoother
+      const scaleFactor = 1 / this.zoomLevel;
+
+      this.cursorX -= deltaX * scaleFactor;
+      this.cursorY -= deltaY * scaleFactor;
+
+      this.previousX = event.clientX;
+      this.previousY = event.clientY;
+    }
+  }
+
+  zoomIn() {
+    this.zoomLevel += 0.1;
+  }
+
+  zoomOut() {
+    this.zoomLevel -= 0.1;
+  }
 }

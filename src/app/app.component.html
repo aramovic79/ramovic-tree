@@ -1,5 +1,6 @@
 <div class="tree-container zoomed">
-  <div class="tree">
+  <div class="tree" [style.transform]="'scale(' + zoomLevel + ') translate(' + (-cursorX) + 'px,' + (-cursorY) + 'px)'"
+    (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp()" (mouseleave)="onMouseUp()" style="cursor: move;">
     <ul>
       <li>
         <a>
