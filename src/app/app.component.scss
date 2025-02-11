@@ -91,3 +91,26 @@
 .tree li a:hover+ul ul::before {
     border-color: #94a0b4;
 }
+
+.tree li a.child-1 {
+    background-color: #ffcccc;
+}
+
+.tree li a.child-2 {
+    background-color: #ccffcc;
+}
+
+.tree li a.child-3 {
+    background-color: #ccccff;
+}
+
+.tree li a.child-4 {
+    background-color: #ffffcc;
+}
+
+.tree li a.child-1:hover,
+.tree li a.child-2:hover,
+.tree li a.child-3:hover,
+.tree li a.child-4:hover {
+    background-color: #e0e0e0;
+}

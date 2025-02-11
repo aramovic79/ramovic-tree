@@ -12,7 +12,7 @@ export class AppComponent {
 
   possibleRelationships = ['Child', 'Spouse', 'Sibling'];
 
-  zoomLevel = 1.0; // Initial zoom level
+  zoomLevel = 1.0; 
   cursorX = 0;
   cursorY = 0;
   isDragging = false;
@@ -43,7 +43,7 @@ export class AppComponent {
 
   @HostListener('mousedown', ['$event'])
   onMouseDown(event: any) {
-    if (event.button === 0) { // Check if left mouse button is clicked
+    if (event.button === 0) { 
       this.isDragging = true;
       this.previousX = event.clientX;
       this.previousY = event.clientY;
@@ -61,7 +61,6 @@ export class AppComponent {
       const deltaX = event.clientX - this.previousX;
       const deltaY = event.clientY - this.previousY;
 
-      // Adjust the scaling factor to make the movement smoother
       const scaleFactor = 1 / this.zoomLevel;
 
       this.cursorX -= deltaX * scaleFactor;
