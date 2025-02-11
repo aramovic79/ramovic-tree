@@ -1,27 +1,49 @@
-# FamilyTree
+# Family Tree Angular Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
+A dynamic family tree application built using Angular. This project allows users to visualize and interact with a family tree, with features such as zooming in/out and dragging to explore different family members.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Add Family Members**: Add new family members with names and relationships (e.g., child, spouse, sibling).
+- **Zooming**: Zoom in and out of the family tree using mouse wheel scrolling.
+- **Dragging**: Move the family tree around by clicking and dragging with the mouse.
+- **Dynamic Family Structure**: Supports multiple family members with hierarchical relationships.
 
-## Code scaffolding
+## Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular**: Framework used for building the front-end.
+- **HTML/CSS**: For rendering the tree structure and styling.
+- **TypeScript**: For the application logic.
+- **SCSS**: For advanced styling and tree layout adjustments.
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To run the project locally, follow these steps:
 
-## Running unit tests
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/bilolkobilov/family-tree.git
+   cd family-tree
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Install Dependencies**:
+   Make sure you have Node.js installed, then run:
+   ```bash
+   npm install
+   ```
 
-## Running end-to-end tests
+3. **Start the Development Server**:
+   ```bash
+   ng serve
+   ```
+   The application will be available at `http://localhost:4200`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## How to Use
 
-## Further help
+- **Add Family Member**: Enter a name and select a relationship (Child, Spouse, Sibling) in the form and click the "Add" button.
+- **Zoom**: Use the mouse wheel to zoom in or out of the family tree.
+- **Drag**: Click and hold the mouse to drag the tree and explore different parts.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+
+This project is licensed under the MIT License.
