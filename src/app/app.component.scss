@@ -108,9 +108,29 @@
     background-color: #ffffcc;
 }
 
+.tree li a.child-5 {
+    background-color: #b8eebf;
+}
+
+.tree li a.child-6 {
+    background-color: #a9e4f2;
+}
+
+.tree li a.child-7 {
+    background-color: #3db5d3;
+}
+
+.tree li a.child-8 {
+    background-color: #9199ee;
+}
+
 .tree li a.child-1:hover,
 .tree li a.child-2:hover,
 .tree li a.child-3:hover,
-.tree li a.child-4:hover {
+.tree li a.child-4:hover,
+.tree li a.child-5:hover,
+.tree li a.child-6:hover,
+.tree li a.child-7:hover,
+.tree li a.child-8:hover {
     background-color: #e0e0e0;
 }
