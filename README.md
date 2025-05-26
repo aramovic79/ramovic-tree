@@ -1,6 +1,6 @@
 # Family Tree Angular Application
 
-A dynamic family tree application built using Angular. This project allows users to visualize and interact with a family tree, with features such as search, zooming in/out and dragging to explore different family members.
+A dynamic family tree application(original repo: https://github.com/bilolkobilov/family-tree) built using Angular. This project allows users to visualize and interact with a family tree, with features such as search, zooming in/out and dragging to explore different family members.
 
 ## Features
 
