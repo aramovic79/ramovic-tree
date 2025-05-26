@@ -33,13 +33,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  addFamilyMember() {
-    if (this.newMember.name && this.newMember.relationship) {
-      this.familyMembers.push({ ...this.newMember });
-      this.newMember = {};
-    }
-  }
-
   onSearchChange() {
     const value = this.searchText.trim();
     if (value.length === 0) {

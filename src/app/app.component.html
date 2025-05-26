@@ -1,8 +1,9 @@
 <div class="tree-container zoomed">
   <div style="position: absolute; top: 20px; right: 40px; z-index: 10;">
-    <input type="text" [(ngModel)]="searchText" (input)="onSearchChange()" placeholder="Pretraga po imenu..." style="padding: 6px 12px; border-radius: 4px; border: 1px solid #ccc; min-width: 220px;" />
+    <input type="text" [(ngModel)]="searchText" (input)="onSearchChange()" placeholder="Pretraga po imenu..." class="search-input" />
   </div>
-  <div class="tree" [style.transform]="'scale(' + zoomLevel + ') translate(' + (-cursorX) + 'px,' + (-cursorY) + 'px)'" (mousedown)="onMouseDown($event)" (mouseup)="onMouseUp()" (mouseleave)="onMouseUp()" style="cursor: move;">
+  <div class="tree" [class.draggable]="isDragging" [style.transform]="'scale(' + zoomLevel + ') translate(' + (-cursorX) + 'px,' + (-cursorY) + 'px)'"
+     (mousedown)="onMouseDown($event)">
     <ul *ngIf="familyTree">
       <ng-container *ngTemplateOutlet="renderMember; context: { $implicit: familyTree }"></ng-container>
     </ul>

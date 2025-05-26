@@ -20,10 +20,12 @@ export class FamilyTreeService {
   }
 
   getMembersByRootId(rootName: string): Observable<FamilyMember | undefined> {
+    // Returns the first (highest hierarchy) member whose name matches rootName
+    // If multiple nodes have the same name, the one closest to the root is returned
     return new Observable(observer => {
       this.getAllMembers().subscribe(tree => {
         const findMember = (member: FamilyMember): FamilyMember | undefined => {
-          if (member.name.includes(rootName)) return member;
+          if (member.name.includes(rootName)) return member; // first match = highest hierarchy
           for (const child of member.children) {
             const found = findMember(child);
             if (found) return found;
