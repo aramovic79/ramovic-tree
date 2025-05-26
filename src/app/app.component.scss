@@ -1,10 +1,8 @@
-
 .tree ul {
     padding-top: 20px;
     position: relative;
     transition: all 0.5s;
     display: flex;
-    cursor: move;
 }
 
 .tree li {
@@ -133,4 +131,15 @@
 .tree li a.child-7:hover,
 .tree li a.child-8:hover {
     background-color: #e0e0e0;
+}
+
+input.search-input {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  min-width: 220px;
+}
+
+.tree.draggable {
+  cursor: move;
 }
