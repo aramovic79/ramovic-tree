@@ -1,0 +1,38 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+export interface FamilyMember {
+  name: string;
+  dateOfBirth: string | null;
+  class: string;
+  children: FamilyMember[];
+}
+
+@Injectable({ providedIn: 'root' })
+export class FamilyTreeService {
+  private dataUrl = 'assets/family-tree.json';
+
+  constructor(private http: HttpClient) {}
+
+  getAllMembers(): Observable<FamilyMember> {
+    return this.http.get<FamilyMember>(this.dataUrl);
+  }
+
+  getMembersByRootId(rootName: string): Observable<FamilyMember | undefined> {
+    return new Observable(observer => {
+      this.getAllMembers().subscribe(tree => {
+        const findMember = (member: FamilyMember): FamilyMember | undefined => {
+          if (member.name.includes(rootName)) return member;
+          for (const child of member.children) {
+            const found = findMember(child);
+            if (found) return found;
+          }
+          return undefined;
+        };
+        observer.next(findMember(tree));
+        observer.complete();
+      });
+    });
+  }
+}
