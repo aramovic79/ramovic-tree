@@ -1,32 +1,53 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { FamilyTreeService, FamilyMember } from './family-tree.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'family-tree';
   familyMembers: any[] = [];
   newMember: any = {};
 
   possibleRelationships = ['Child', 'Spouse', 'Sibling'];
 
-  zoomLevel = 1.0; 
+  zoomLevel = 1.0;
   cursorX = 0;
   cursorY = 0;
   isDragging = false;
   previousX = 0;
   previousY = 0;
 
-  constructor() {}
+  familyTree: FamilyMember | null = null;
+  searchText: string = '';
+  private fullTree: FamilyMember | null = null;
 
-  ngOnInit(): void {}
+  constructor(private familyTreeService: FamilyTreeService) {}
+
+  ngOnInit(): void {
+    this.familyTreeService.getAllMembers().subscribe(tree => {
+      this.familyTree = tree;
+      this.fullTree = tree;
+    });
+  }
 
   addFamilyMember() {
     if (this.newMember.name && this.newMember.relationship) {
       this.familyMembers.push({ ...this.newMember });
       this.newMember = {};
+    }
+  }
+
+  onSearchChange() {
+    const value = this.searchText.trim();
+    if (value.length === 0) {
+      this.familyTree = this.fullTree;
+    } else if (value.length >= 3) {
+      this.familyTreeService.getMembersByRootId(value).subscribe(member => {
+        this.familyTree = member || null;
+      });
     }
   }
 
@@ -43,7 +64,7 @@ export class AppComponent {
 
   @HostListener('mousedown', ['$event'])
   onMouseDown(event: any) {
-    if (event.button === 0) { 
+    if (event.button === 0) {
       this.isDragging = true;
       this.previousX = event.clientX;
       this.previousY = event.clientY;
