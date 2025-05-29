@@ -9,16 +9,26 @@
     </ul>
     <ng-template #renderMember let-member>
       <li>
-        <a [ngClass]="member.class">
+        <a [ngClass]="member.class" [attr.id]="'member-' + (member.name ? member.name.split(' ').join('') : '')" (click)="onMemberClick(member, $event)" tabindex="0">
           <span *ngIf="member.dateOfBirth; else noDate">{{ member.name }}({{ member.dateOfBirth }})</span>
           <ng-template #noDate>{{ member.name }}</ng-template>
         </a>
         <ul *ngIf="member.children && member.children.length">
-          <ng-container *ngFor="let child of member.children">
+          <ng-container *ngFor="let child of member.children || []">
             <ng-container *ngTemplateOutlet="renderMember; context: { $implicit: child }"></ng-container>
           </ng-container>
         </ul>
       </li>
     </ng-template>
+  </div>
+  <div *ngIf="showMemberModal" class="modal-overlay" (click)="closeMemberModal()">
+    <div class="modal-window" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeMemberModal()">&times;</button>
+      <h2>{{ selectedMember?.name }}</h2>
+      <p><strong>Datum rođenja:</strong> {{ selectedMember?.dateOfBirth || 'Nepoznato' }}</p>
+      <ng-container *ngIf="selectedMember?.children?.length">
+        <p><strong>Broj djece:</strong> {{ selectedMember?.children?.length }}</p>
+      </ng-container>
+    </div>
   </div>
 </div>

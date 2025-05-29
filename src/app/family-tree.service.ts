@@ -24,14 +24,24 @@ export class FamilyTreeService {
     // If multiple nodes have the same name, the one closest to the root is returned
     return new Observable(observer => {
       this.getAllMembers().subscribe(tree => {
+        const ensureChildrenArray = (member: FamilyMember): FamilyMember => {
+          if (!Array.isArray(member.children)) {
+            member.children = [];
+          }
+          if (member.children.length) {
+            member.children = member.children.map(ensureChildrenArray);
+          }
+          return member;
+        };
         const findMember = (member: FamilyMember): FamilyMember | undefined => {
-          if (member.name.includes(rootName)) return member; // first match = highest hierarchy
-          for (const child of member.children) {
+          if (member.name.toLowerCase().includes(rootName.toLowerCase())) return member; // first match = highest hierarchy
+          for (const child of member.children || []) {
             const found = findMember(child);
             if (found) return found;
           }
           return undefined;
         };
+        ensureChildrenArray(tree);
         observer.next(findMember(tree));
         observer.complete();
       });

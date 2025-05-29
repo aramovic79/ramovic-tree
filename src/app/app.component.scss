@@ -74,9 +74,18 @@
     font-size: 11px;
     display: inline-block;
     border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, background 0.2s;
 }
 
 .tree li a:hover,
+.tree li a:focus {
+    background: #f0f4fa;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    outline: none;
+    cursor: pointer;
+}
+
 .tree li a:hover+ul li a {
     background: #c8e4f8;
     color: #000;
@@ -142,4 +151,120 @@ input.search-input {
 
 .tree.draggable {
   cursor: move;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-window {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  min-width: 320px;
+  max-width: 90vw;
+  position: relative;
+  animation: modalFadeIn 0.2s;
+}
+
+@keyframes modalFadeIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.modal-close:hover {
+  color: #d00;
+}
+
+.modal-window h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.modal-window p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+// Styles moved to styles.scss for global use
+.tree {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
+.tree ul {
+  padding-left: 20px;
+}
+
+.tree li {
+  margin: 0;
+  padding: 0;
+}
+
+.tree a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.tree a:hover {
+  text-decoration: underline;
+}
+
+.search-input {
+  margin-bottom: 1rem;
+}
+
+.draggable {
+  cursor: move;
+}
+
+.modal-overlay {
+  backdrop-filter: blur(5px);
+}
+
+.modal-window {
+  max-width: 500px;
+  width: 90%;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.modal-close {
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+}
+
+.modal-window h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.modal-window p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
 }
