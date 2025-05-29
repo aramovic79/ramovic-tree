@@ -14,6 +14,57 @@
           "class": "child-3",
           "children": [
             {
+              "name": "Ismeta",
+              "dateOfBirth": "26.11.1939.",
+              "class": "child-4"
+            },
+            {
+              "name": "Hidajet",
+              "dateOfBirth": "01.10.1943.",
+              "class": "child-4",
+              "children": [
+                {
+                  "name": "Albina",
+                  "dateOfBirth": "23.09.1976.",
+                  "class": "child-5",
+                  "children": [
+                    {
+                      "name": "Hasan",
+                      "dateOfBirth": "08.06.2019.",
+                      "class": "child-6"
+                    }
+                  ]
+                },
+                {
+                  "name": "Albin",
+                  "dateOfBirth": "27.09.1979.",
+                  "class": "child-5",
+                  "children": [
+                    {
+                      "name": "Jaman",
+                      "dateOfBirth": "13.04.2013.",
+                      "class": "child-6"
+                    },
+                    {
+                      "name": "Nadja",
+                      "dateOfBirth": "15.04.2015.",
+                      "class": "child-6"
+                    },
+                    {
+                      "name": "Hava",
+                      "dateOfBirth": "27.12.2020.",
+                      "class": "child-6"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Ismet",
+              "dateOfBirth": null,
+              "class": "child-4"
+            },
+            {
               "name": "Izet",
               "dateOfBirth": "02.02.1952.",
               "class": "child-4",
@@ -31,17 +82,63 @@
                         {
                           "name": "Davud",
                           "dateOfBirth": null,
-                          "class": "child-7",
-                          "children": [
-                            {
-                              "name": "TBD",
-                              "dateOfBirth": null,
-                              "class": "child-8",
-                              "children": []
-                            }
-                          ]
+                          "class": "child-7"
+                        },
+                        {
+                          "name": "Esma",
+                          "dateOfBirth": null,
+                          "class": "child-7"
                         }
                       ]
+                    },
+                    {
+                      "name": "Ilma",
+                      "dateOfBirth": null,
+                      "class": "child-6"
+                    },
+                    {
+                      "name": "Emana",
+                      "dateOfBirth": null,
+                      "class": "child-6"
+                    }
+                  ]
+                },
+                {
+                  "name": "Meliha",
+                  "dateOfBirth": null,
+                  "class": "child-5",
+                  "children": [
+                    {
+                      "name": "Džejlana",
+                      "dateOfBirth": null,
+                      "class": "child-6"
+                    },
+                    {
+                      "name": "Ajlana",
+                      "dateOfBirth": null,
+                      "class": "child-6"
+                    },
+                    {
+                      "name": "Ema",
+                      "dateOfBirth": null,
+                      "class": "child-6"
+                    }
+                  ]
+                },
+                {
+                  "name": "Melida",
+                  "dateOfBirth": null,
+                  "class": "child-5",
+                  "children": [
+                    {
+                      "name": "Hena",
+                      "dateOfBirth": null,
+                      "class": "child-6"
+                    },
+                    {
+                      "name": "Husein",
+                      "dateOfBirth": null,
+                      "class": "child-6"
                     }
                   ]
                 }
@@ -64,52 +161,32 @@
         {
           "name": "Fadilj",
           "dateOfBirth": "05.03.1929.",
-          "class": "child-3",
-          "children": [
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] },
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] }
-          ]
+          "class": "child-3"
         },
-        { "name": "Emina", "dateOfBirth": "04.10.1934.", "class": "child-3", "children": [] },
-        { "name": "Kimeta", "dateOfBirth": "11.07.1959.", "class": "child-3", "children": [] },
-        { "name": "Hamid", "dateOfBirth": "18.02.1962.", "class": "child-3", "children": [] }
+        {
+          "name": "Emina",
+          "dateOfBirth": "04.10.1934.",
+          "class": "child-3",
+          "children": []
+        },
+        {
+          "name": "Kimeta",
+          "dateOfBirth": "11.07.1959.",
+          "class": "child-3",
+          "children": []
+        },
+        {
+          "name": "Hamid",
+          "dateOfBirth": "18.02.1962.",
+          "class": "child-3",
+          "children": []
+        }
       ]
     },
     {
       "name": "Murat",
       "dateOfBirth": null,
-      "class": "child-2",
-      "children": [
-        {
-          "name": "TBD",
-          "dateOfBirth": null,
-          "class": "child-3",
-          "children": [
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] },
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] }
-          ]
-        },
-        {
-          "name": "TBD",
-          "dateOfBirth": null,
-          "class": "child-3",
-          "children": [
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] },
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] },
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] }
-          ]
-        },
-        {
-          "name": "TBD",
-          "dateOfBirth": null,
-          "class": "child-3",
-          "children": [
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] },
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] }
-          ]
-        },
-        { "name": "TBD", "dateOfBirth": null, "class": "child-3", "children": [] }
-      ]
+      "class": "child-2"
     },
     {
       "name": "Nurko",
@@ -119,65 +196,70 @@
         {
           "name": "Fata",
           "dateOfBirth": "04.07.1936.",
-          "class": "child-3",
-          "children": [
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] },
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] },
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] }
-          ]
+          "class": "child-3"
         },
         {
           "name": "Hadija",
           "dateOfBirth": "12.03.1938.",
-          "class": "child-3",
-          "children": [
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] },
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] }
-          ]
+          "class": "child-3"
         },
-        { "name": "Bahta", "dateOfBirth": "06.03.1939.", "class": "child-3", "children": [] },
-        { "name": "Muratka", "dateOfBirth": "12.10.1945.", "class": "child-3", "children": [] },
-        { "name": "Ramo", "dateOfBirth": "24.06.1948.", "class": "child-3", "children": [] },
-        { "name": "Remzija", "dateOfBirth": "14.11.1950.", "class": "child-3", "children": [] },
-        { "name": "Rasim", "dateOfBirth": "13.10.1953.", "class": "child-3", "children": [] },
-        { "name": "Asim", "dateOfBirth": "15.04.1956.", "class": "child-3", "children": [] }
+        {
+          "name": "Bahta",
+          "dateOfBirth": "06.03.1939.",
+          "class": "child-3",
+          "children": []
+        },
+        {
+          "name": "Muratka",
+          "dateOfBirth": "12.10.1945.",
+          "class": "child-3",
+          "children": []
+        },
+        {
+          "name": "Ramo",
+          "dateOfBirth": "24.06.1948.",
+          "class": "child-3",
+          "children": []
+        },
+        {
+          "name": "Remzija",
+          "dateOfBirth": "14.11.1950.",
+          "class": "child-3",
+          "children": []
+        },
+        {
+          "name": "Rasim",
+          "dateOfBirth": "13.10.1953.",
+          "class": "child-3",
+          "children": []
+        },
+        {
+          "name": "Asim",
+          "dateOfBirth": "15.04.1956.",
+          "class": "child-3",
+          "children": []
+        }
       ]
+    },
+    {
+      "name": "Behdžida",
+      "dateOfBirth": "06.01.1915.",
+      "class": "child-2"
+    },
+    {
+      "name": "Ferida",
+      "dateOfBirth": null,
+      "class": "child-2"
+    },
+    {
+      "name": "Šemsida",
+      "dateOfBirth": null,
+      "class": "child-2"
     },
     {
       "name": "Dzemail",
       "dateOfBirth": null,
-      "class": "child-2",
-      "children": [
-        {
-          "name": "TBD",
-          "dateOfBirth": null,
-          "class": "child-3",
-          "children": [
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] },
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] }
-          ]
-        },
-        {
-          "name": "TBD",
-          "dateOfBirth": null,
-          "class": "child-3",
-          "children": [
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] },
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] },
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] }
-          ]
-        },
-        {
-          "name": "TBD",
-          "dateOfBirth": null,
-          "class": "child-3",
-          "children": [
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] },
-            { "name": "TBD", "dateOfBirth": null, "class": "child-4", "children": [] }
-          ]
-        },
-        { "name": "TBD", "dateOfBirth": null, "class": "child-3", "children": [] }
-      ]
+      "class": "child-2"
     }
   ]
 }
