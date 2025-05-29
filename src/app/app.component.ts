@@ -24,6 +24,9 @@ export class AppComponent implements OnInit {
   searchText: string = '';
   private fullTree: FamilyMember | null = null;
 
+  selectedMember: FamilyMember | null = null;
+  showMemberModal = false;
+
   constructor(private familyTreeService: FamilyTreeService) {}
 
   ngOnInit(): void {
@@ -40,6 +43,17 @@ export class AppComponent implements OnInit {
     } else if (value.length >= 3) {
       this.familyTreeService.getMembersByRootId(value).subscribe(member => {
         this.familyTree = member || null;
+        // Focus on found member after DOM update
+        setTimeout(() => {
+          if (member && member.name) {
+            const id = 'member-' + member.name.split(' ').join('');
+            const el = document.getElementById(id);
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              el.focus && el.focus();
+            }
+          }
+        }, 0);
       });
     }
   }
@@ -91,5 +105,16 @@ export class AppComponent implements OnInit {
 
   zoomOut() {
     this.zoomLevel -= 0.1;
+  }
+
+  onMemberClick(member: FamilyMember, event: MouseEvent) {
+    event.preventDefault();
+    this.selectedMember = member;
+    this.showMemberModal = true;
+  }
+
+  closeMemberModal() {
+    this.showMemberModal = false;
+    this.selectedMember = null;
   }
 }
